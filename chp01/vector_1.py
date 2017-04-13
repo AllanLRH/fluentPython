@@ -28,6 +28,9 @@ class Vector(collections.namedtuple('VectorBase', 'x, y')):
     def __rmul__(self, scalar):
         return Vector(scalar*self.x, scalar*self.y)
 
+    def __len__(self):
+        raise NotImplementedError("It's not implemented!")
+
 
 if __name__ == '__main__':
     v0 = Vector(2, 3)
@@ -39,4 +42,5 @@ if __name__ == '__main__':
     print(v1 + v0)
     print(v1*10)
     print(10*v1)
+    print(len(v0))
 
